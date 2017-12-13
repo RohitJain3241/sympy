@@ -1,3 +1,4 @@
+from __future__ import division
 from sympy.algebras.quaternion import Quaternion
 from sympy import symbols, re, im, Add, Mul, I, Abs
 from sympy import cos, sin, sqrt, conjugate, exp, log, acos, E, pi
@@ -82,7 +83,7 @@ def test_quaternion_functions():
     assert integrate(Quaternion(x, x, x, x), x) == \
     Quaternion(x**2 / 2, x**2 / 2, x**2 / 2, x**2 / 2)
 
-    assert Quaternion.rotate_point((1, 1, 1), q1) == (1 / 5, 1, 7 / 5)
+    assert Quaternion.rotate_point((1, 1, 1), q1) == (S(1)/5, 1, S(7)/5)
 
 
 def test_quaternion_conversions():
